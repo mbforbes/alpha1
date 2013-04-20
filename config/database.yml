@@ -17,4 +17,3 @@ production:
   adapter: postgresql
   username: user
   database: alpha1-prod
-
