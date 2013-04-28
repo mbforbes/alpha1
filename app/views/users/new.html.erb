@@ -1,0 +1,22 @@
+<h1>Create a new MortragAlpha1 account</h1>
+<%= form_for(@user) do |f| %>
+
+
+<%= f.label :realname , "Name" %>
+<%= f.text_field :realname %>
+
+<%= f.label :email %>
+<%= f.text_field :email %>
+
+<%= f.label :mtgname, "Mortrag alias" %>
+<%= f.text_field :mtgname %>
+
+<%= f.label :password %>
+<%= f.password_field :password %>
+
+<%= f.label :password_confirmation %>
+<%= f.password_field :password_confirmation %>
+<br />
+<%= f.submit "Sign up", class: "btn btn-primary" %>
+
+<% end %>
