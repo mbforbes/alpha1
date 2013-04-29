@@ -10,4 +10,19 @@
  *
  *= require_self
  *= require_tree .
+ *= require bootstrap
+ *= require bootstrap-responsive
  */
+@import "bootstrap-responsive";
+
+ .leftbar {
+	background-color: #BBBBBB;
+}
+
+.mainbar {
+	background-color: #DDDDDD;
+}
+
+.rightbar {
+	background-color: #BBBBBB;
+}

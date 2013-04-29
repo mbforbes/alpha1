@@ -8,11 +8,17 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   def create
     @user = User.new(user_params)
-    render 'new'
+    @errors = @user.errors.full_messages
+    if @user.save
+      render 'show'
+    else
+      render 'new'
+    end
   end
 
   private

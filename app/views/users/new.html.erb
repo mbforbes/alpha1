@@ -1,6 +1,8 @@
 <h1>Create a new MortragAlpha1 account</h1>
-<%= form_for(@user) do |f| %>
 
+<%= render 'shared/errors', errors: @user.errors %>
+
+<%= form_for(@user) do |f| %>
 
 <%= f.label :realname , "Name" %>
 <%= f.text_field :realname %>

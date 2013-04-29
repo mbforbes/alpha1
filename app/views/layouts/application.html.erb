@@ -7,8 +7,29 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	<div class="container">
+		<div class="row">
+			<div class="span12 header">
+				<%= render 'layouts/header' %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span2 leftbar">
+				<%= render 'layouts/leftbar' %>
+			</div>
+			<div class="span8 mainbar">
+				<%= yield %>
+				<%= debug(params) if Rails.env.development? %>
+			</div>
+			<div class="span2 rightbar">
+				<%= render 'layouts/rightbar' %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span12 footer">
+				<%= render 'layouts/footer' %>
+			</div>
+		</div>		
+	</div>
 </body>
 </html>
