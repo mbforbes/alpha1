@@ -2,7 +2,7 @@ class Shout < ActiveRecord::Base
   # TODO how to retrieve mortragians??
   validates :who,
     inclusion: {
-      in: ("drazsha", "fooman"),
+      in: %(drazsha, fooman),
       message: "Only Mortragians can shout!"
     }
 
