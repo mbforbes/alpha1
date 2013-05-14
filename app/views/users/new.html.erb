@@ -1,6 +1,6 @@
 <h1>Create a new MortragAlpha1 account</h1>
 
-<%= render 'shared/errors', errors: @user.errors %>
+<%= render 'shared/errors', errors: @user.errors.full_messages %>
 
 <%= form_for(@user) do |f| %>
 
@@ -19,6 +19,6 @@
 <%= f.label :password_confirmation %>
 <%= f.password_field :password_confirmation %>
 <br />
-<%= f.submit "Sign up", class: "btn btn-primary" %>
+<%= f.submit "Sign up", class: "btn" %>
 
 <% end %>

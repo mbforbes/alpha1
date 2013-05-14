@@ -1,0 +1,12 @@
+<% provide(:title, "Sign in") %>
+<h1>Sign in</h1>
+<%= render 'shared/errors', errors: @errors %>
+<%= form_for(:session, url: sessions_path) do |f| %>
+    <%= f.label :mtgname, "Mortrag username" %>
+    <%= f.text_field :mtgname %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <br />
+    <%= f.submit "Sign in", class: "btn" %>
+<% end %>

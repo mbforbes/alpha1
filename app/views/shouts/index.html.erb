@@ -1,1 +1,7 @@
-Shouts index!
+<% provide :title, "Shouts" %>
+<h1>Yellbox!</h1>
+<% @shouts.each do |shout| %>
+	<h2><%= shout.body %></h2>
+	<p class="author">--<%= shout.user.mtgname %></p>
+<% end %>
+<%= link_to "Make yourself heard", new_shout_path %>

@@ -1,7 +1,10 @@
-<% if errors.full_messages.any? %>
-	<ul>
-		<% errors.full_messages.each do |msg| %>
-		<li><%= msg %></li>
-		<% end %>
-	</ul>
+<% if errors && errors.any? %>
+	<div class="alert alert-error">
+		Looks like you had a couple problems:
+		<ul>
+			<% errors.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
 <% end %>

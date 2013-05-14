@@ -232,13 +232,15 @@ body {
 }
 
 a {
-  color: #0088cc;
+  /* MAX -- changed this from #0088cc */
+  color: #99268b;
   text-decoration: none;
 }
 
 a:hover,
 a:focus {
-  color: #005580;
+  /* MAX -- changed this from #005580 */
+  color: #34002d;
   text-decoration: underline;
 }
 

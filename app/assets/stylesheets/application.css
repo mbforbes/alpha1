@@ -14,14 +14,47 @@
  *= require bootstrap-responsive
  */
 
- .leftbar {
-	background-color: #BBBBBB;
+.header {
+	color: white;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+.header .mtg a {
+	color: white;
+	text-decoration: none;
+}
+
+.header .right {
+	text-align: right;
+}
+
+.header .right a {
+	color: white;
+}
+
+.leftbar {
+	text-align: right;
 }
 
 .mainbar {
-	background-color: #DDDDDD;
+	background-color: white;
+
+}
+
+.mainbar .content {
+	padding-left: 15px;	
+	padding-right: 15px;
 }
 
 .rightbar {
-	background-color: #BBBBBB;
+
+}
+
+.footer .contents {
+	color: white;
+	font-style: italic;
+	text-align: center;
+	padding-top: 4px;
+	padding-bottom: 4px;
 }

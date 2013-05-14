@@ -11,14 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130507051513) do
+ActiveRecord::Schema.define(version: 20130513050602) do
 
   create_table "shouts", force: true do |t|
     t.text     "body"
-    t.string   "who"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "shouts", ["user_id"], name: "index_shouts_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "mtgname"
@@ -27,8 +29,10 @@ ActiveRecord::Schema.define(version: 20130507051513) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email"
+    t.string   "remember_token"
   end
 
   add_index "users", ["mtgname"], name: "index_users_on_mtgname", unique: true
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
 
 end

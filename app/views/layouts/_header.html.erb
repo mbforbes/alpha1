@@ -1,1 +1,17 @@
-Header whee!
+<div class="row">
+	<div class="span3 mtg">
+		<h1>
+			<%= link_to raw("Mortrag<sub>&alpha;</sub>"), root_path%>
+		</h1>
+	</div>
+</div>
+<div class="row">
+	<div class="span5 offset3 right">
+		<% if signed_in? %>
+			<%= current_user.mtgname %> | 
+			<%= link_to "signout", signout_path, method: "delete" %>
+		<% else %>
+			<%= link_to "signin", signin_path %>
+		<% end %>
+	</div>
+</div>

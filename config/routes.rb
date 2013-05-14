@@ -1,8 +1,14 @@
 Alpha1::Application.routes.draw do
+  get "sessions/new"
   root to: "static#home"
 
   resources :users
-  resources :shouts, only: [:index]
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :shouts
+
+  match '/signout', to: 'sessions#destroy', via: 'delete'
+  get '/signin', to: 'sessions#new'
+  get '/yellbox', to: 'shouts#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

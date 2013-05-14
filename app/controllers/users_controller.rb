@@ -13,7 +13,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @errors = @user.errors.full_messages
     if @user.save
       render 'show'
     else

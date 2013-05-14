@@ -1,0 +1,10 @@
+<% provide :title, "New shout" %>
+<h1>Shout below</h1>
+<%= render 'shared/errors', errors: @shout.errors.full_messages %>
+<%= form_for(@shout) do |f| %>
+	<%= f.label :body %>
+	<%= f.text_area :body, style: "width: 90%"%>
+	
+	<br />
+	<%= f.submit "Shout", class: "btn" %>
+<% end %>
