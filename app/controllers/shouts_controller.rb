@@ -17,10 +17,18 @@ class ShoutsController < ApplicationController
 	def create
 		@shout = current_user.shouts.build(shout_params)
 		if @shout.save
-			render 'show'
+			redirect_to shouts_path
 		else
 			render 'new'
 		end
+	end
+
+	def edit
+	end
+
+	def destroy
+		@shout.destroy
+		redirect_to shouts_path
 	end
 
 	private
@@ -29,11 +37,7 @@ class ShoutsController < ApplicationController
 		end
 
 		def correct_user
-			@shout = Shout.find(params[:id])
-			current_user?(@shout.who)
-
-
-
-
+			@shout = current_user.shouts.find_by(id: params[:id])
+			redirect_to root_path if @shout.nil?
 		end
 end
