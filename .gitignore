@@ -10,3 +10,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore Mac crap
+.DS_Store
+
+# Ignore emacs crap
+*~

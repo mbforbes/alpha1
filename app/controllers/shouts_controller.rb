@@ -1,6 +1,14 @@
 class ShoutsController < ApplicationController
+
+	# Controller method pre-filtering. Groups outlined below, too.
+	# ------------------------------------------------------------
+
 	before_filter :signed_in_user, only: [:new, :create]
-	before_filter :correct_user, only: :destroy
+	before_filter :correct_user, only: [:edit, :update, :destroy]
+
+
+	# Viewing: no restrictions.
+	# -------------------------
 
 	def index
 		@shouts = Shout.all
@@ -9,6 +17,10 @@ class ShoutsController < ApplicationController
 	def show
 		@shout = Shout.find(params[:id])
 	end
+
+
+	# Make new shouts: must be signed_in_user.
+	# ----------------------------------------
 
 	def new
 		@shout = Shout.new #(who: current_user)
@@ -23,13 +35,26 @@ class ShoutsController < ApplicationController
 		end
 	end
 
+
+	# Deal with existing shouts: must be correct_user.
+	# ------------------------------------------------
+
 	def edit
+		# TODO
+	end
+
+	def update
+		# TODO
 	end
 
 	def destroy
 		@shout.destroy
 		redirect_to shouts_path
 	end
+
+
+	# Private helpers (before_filter's).
+	# ----------------------------------
 
 	private
 		def shout_params
